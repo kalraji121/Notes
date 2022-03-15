@@ -37,18 +37,18 @@ use of sublist3r tool to list subdomains to a website
 
 Some subdomains aren't always hosted in publically accessible DNS results, such as development versions of a web application or administration portals.
 
-Instead, the DNS record could be kept on a private DNS server or recorded on the developer's machines in their /etc/hosts file (or c:\windows\system32\drivers\etc\hosts file for Windows users) which maps domain names to IP addresses. 
+Instead, the DNS record could be kept on a private DNS server or recorded on the developer's machines in their hosts file. which maps domain names to IP addresses. 
 
 
-Because web servers can host multiple websites from one server when a website is requested from a client, the server knows which website the client wants from the Host header. We can utilise this host header by making changes to it and monitoring the response to see if we've discovered a new website.
+Because web servers can host multiple websites from one server when a website is requested from a client, the server knows which website the client wants from the Host header. We can utilise this "host" header by making changes to it and monitoring the response to see if we've discovered a new website.
 
 
 
 "user@machine$ ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://10.10.185.201 -fs {size}"
 
 
-The above command uses the -w switch to specify the wordlist we are going to use.
- The -H switch adds/edits a header (in this instance, the Host header),
+-w switch to specify the wordlist we are going to use.
+-H switch adds/edits a header (in this instance, the Host header),
   we have the FUZZ keyword in the space where a subdomain would normally go, and this is where we will try all the options from the wordlist.
 
 Because the above command will always produce a valid result, we need to filter the output. 
