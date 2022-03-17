@@ -118,6 +118,11 @@ As a developer, it's important to be aware of web application vulnerabilities, h
 
 5. Carefully analyze the web application and allow only protocols and PHP wrappers that are in need.
 
+6. Never trust user input, and make sure to implement proper input validation against file inclusion.
+
+7. Implement whitelisting for file names and locations as well as blacklisting.
+
+
 ---------------
 
 Steps for testing for LFI
@@ -136,9 +141,6 @@ Understand the input validation and if there are any filters!
 
 Try the inject a valid entry to read sensitive files
 
-6. Never trust user input, and make sure to implement proper input validation against file inclusion.
-
-7. Implement whitelisting for file names and locations as well as blacklisting.
 
 -------------------
 
