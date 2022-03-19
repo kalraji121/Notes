@@ -160,9 +160,3 @@ Allowing user input containing characters such as ' " $ \ can cause SQL Queries 
 
 --------------
 
-
-
-
-
-
-aping user input is the method of prepending a backslash (\) to the
